@@ -1,0 +1,193 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="warehouse">
+
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <!-- Left wall -->
+    <model name="wall_left">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>10 0.2 2</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>10 0.2 2</size>
+            </box>
+          </geometry>
+        </visual>
+      </link>
+      <pose>0 5 1 0 0 0</pose>
+    </model>
+
+    <!-- Right wall -->
+    <model name="wall_right">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>10 0.2 2</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>10 0.2 2</size>
+            </box>
+          </geometry>
+        </visual>
+      </link>
+      <pose>0 -5 1 0 0 0</pose>
+    </model>
+
+    <!-- Back wall -->
+    <model name="wall_back">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.2 10 2</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.2 10 2</size>
+            </box>
+          </geometry>
+        </visual>
+      </link>
+      <pose>5 0 1 0 0 0</pose>
+    </model>
+
+    <!-- Shelf 1 -->
+    <model name="shelf_1">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>3 0.6 1.5</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>3 0.6 1.5</size>
+            </box>
+          </geometry>
+        </visual>
+      </link>
+      <pose>0 2.5 0.75 0 0 0</pose>
+    </model>
+
+    <!-- Shelf 2 -->
+    <model name="shelf_2">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>3 0.6 1.5</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>3 0.6 1.5</size>
+            </box>
+          </geometry>
+        </visual>
+      </link>
+      <pose>0 -2.5 0.75 0 0 0</pose>
+    </model>
+    <!-- ================= FIRE HAZARD ================= -->
+
+    <model name="fire_hazard">
+      <static>true</static>
+
+      <link name="link">
+
+        <visual name="visual">
+          <geometry>
+            <sphere>
+              <radius>0.25</radius>
+            </sphere>
+          </geometry>
+
+          <material>
+            <ambient>1 0 0 1</ambient>
+            <diffuse>1 0 0 1</diffuse>
+            <emissive>1 0 0 1</emissive>
+          </material>
+        </visual>
+
+        <collision name="collision">
+          <geometry>
+            <sphere>
+              <radius>0.25</radius>
+            </sphere>
+          </geometry>
+        </collision>
+
+      </link>
+
+      <pose>2.5 1.5 0.25 0 0 0</pose>
+    </model>
+
+
+    <!-- ================= GAS HAZARD ================= -->
+
+    <model name="gas_hazard">
+      <static>true</static>
+
+      <link name="link">
+
+        <visual name="visual">
+          <geometry>
+            <cylinder>
+              <radius>0.25</radius>
+              <length>0.5</length>
+            </cylinder>
+          </geometry>
+
+          <material>
+            <ambient>0 1 0 1</ambient>
+            <diffuse>0 1 0 1</diffuse>
+            <emissive>0 1 0 1</emissive>
+          </material>
+        </visual>
+
+        <collision name="collision">
+          <geometry>
+            <cylinder>
+              <radius>0.25</radius>
+              <length>0.5</length>
+            </cylinder>
+          </geometry>
+        </collision>
+
+      </link>
+
+      <pose>-2.5 -1.5 0.25 0 0 0</pose>
+    </model>
+  </world>
+</sdf>
