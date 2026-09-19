@@ -14,16 +14,13 @@ setup(
     install_requires=['setuptools'],
     zip_safe=True,
     maintainer='treesa',
-    maintainer_email='treesajohnny345@gmail.com',
-    description='TODO: Package description',
-    license='TODO: License declaration',
-    extras_require={
-        'test': [
-            'pytest',
-        ],
-    },
+    maintainer_email='your@email.com',
+    description='Simulated fire and gas sensors',
+    license='TODO',
+    tests_require=['pytest'],
     entry_points={
         'console_scripts': [
+            'sensor_simulator = fire_gas_sensors.sensor_simulator:main',
         ],
     },
 )
