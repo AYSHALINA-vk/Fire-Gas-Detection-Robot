@@ -25,6 +25,6 @@ endif()
 
 ament_package()
 install(
-  DIRECTORY urdf launch meshes config worlds
+  DIRECTORY urdf launch worlds
   DESTINATION share/${PROJECT_NAME}
 )
